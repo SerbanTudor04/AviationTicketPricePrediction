@@ -6,7 +6,7 @@ from sklearn.metrics import (mean_absolute_error, mean_absolute_percentage_error
 
 from arima import (find_best_sarima, fit_arima_manual, forecast_future,
                    plot_sarima_diagnostics, sarima_predict)
-from config import COLORS, N_TEST
+from config import COLORS, DATA_DIR, N_TEST
 from exploratory import decompose_series, plot_acf_pacf
 from smoothing import (holt_forecast, holt_winters_forecast,
                        plot_smoothing_comparison, ses_forecast)
@@ -31,7 +31,7 @@ def compare_models_table(actual: pd.Series, forecasts: dict) -> pd.DataFrame:
     df   = pd.DataFrame(rows).sort_values("RMSE").reset_index(drop=True)
     print("\n--- Comparare modele univariate ---")
     print(df.to_string(index=False))
-    df.to_csv("model_comparison.csv", index=False)
+    df.to_csv(f"{DATA_DIR}/model_comparison.csv", index=False)
 
     fig, ax = plt.subplots(figsize=(8, 4))
     colors_bar = ["#4CAF50", "#2196F3", "#FF9800", "#F44336"][:len(df)]
@@ -40,7 +40,7 @@ def compare_models_table(actual: pd.Series, forecasts: dict) -> pd.DataFrame:
     ax.set_title("Acuratete prognoza — MAPE (%)", fontweight="bold")
     ax.grid(True, alpha=0.3, axis="x")
     plt.tight_layout()
-    plt.savefig("fig08_mape_comparison.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig08_mape_comparison.png", bbox_inches="tight")
     plt.show()
 
     return df
@@ -63,7 +63,7 @@ def plot_final_forecast(train: pd.Series, test: pd.Series,
     ax.legend(loc="upper left")
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig(f"fig09_forecast_{_slug(name)}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig09_forecast_{_slug(name)}.png", bbox_inches="tight")
     plt.show()
 
 
