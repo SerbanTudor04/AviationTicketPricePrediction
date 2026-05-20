@@ -100,13 +100,13 @@ def plot_irf(var_result, periods: int = 24, name: str = "VAR") -> None:
     irf.plot(orth=True)
     plt.suptitle(f"IRF ortogonalizat: {name}", fontsize=12, fontweight="bold")
     plt.tight_layout()
-    plt.savefig(f"fig10_irf_{name}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig10_irf_{name}.png", bbox_inches="tight")
     plt.show()
 
     irf.plot_cum_effects(orth=True)
     plt.suptitle(f"Efecte cumulative IRF: {name}", fontsize=12, fontweight="bold")
     plt.tight_layout()
-    plt.savefig(f"fig11_irf_cum_{name}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig11_irf_cum_{name}.png", bbox_inches="tight")
     plt.show()
 
 
@@ -121,7 +121,7 @@ def plot_fevd(var_result, periods: int = 24, name: str = "VAR") -> None:
     fevd.plot()
     plt.suptitle(f"Descompunerea variantei (FEVD): {name}", fontsize=12, fontweight="bold")
     plt.tight_layout()
-    plt.savefig(f"fig12_fevd_{name}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig12_fevd_{name}.png", bbox_inches="tight")
     plt.show()
 
     var_names = var_result.names
@@ -179,5 +179,5 @@ def multivariate_pipeline(df: pd.DataFrame) -> None:
         ax.set_ylabel(col, fontsize=9)
         ax.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig("fig13_multivariate.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig13_multivariate.png", bbox_inches="tight")
     plt.show()
