@@ -1,0 +1,7 @@
+Cauza,Efect,min_p,Semnif.
+log_Oil,log_CPI,0.0003,***
+log_USDEUR,log_CPI,0.8046,ns
+log_CPI,log_Oil,0.1506,ns
+log_USDEUR,log_Oil,0.4179,ns
+log_CPI,log_USDEUR,0.1895,ns
+log_Oil,log_USDEUR,0.1162,ns

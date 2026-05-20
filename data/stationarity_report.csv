@@ -1,0 +1,13 @@
+Serie,ADF stat,ADF p,ADF stationar?,KPSS stat,KPSS p,KPSS stationar?
+Airline_Fares_CPI (nivel),-1.434,0.5659,False,1.0311,0.01,False
+Airline_Fares_CPI (D1),-4.4396,0.0003,True,0.055,0.1,True
+log_Airline_Fares_CPI (nivel),-1.4538,0.5562,False,0.997,0.01,False
+log_Airline_Fares_CPI (D1),-4.506,0.0002,True,0.0464,0.1,True
+Brent_Oil (nivel),-1.7924,0.3842,False,0.5669,0.0266,False
+Brent_Oil (D1),-8.6509,0.0,True,0.0863,0.1,True
+log_Brent_Oil (nivel),-1.9528,0.3076,False,0.5002,0.0416,False
+log_Brent_Oil (D1),-8.1101,0.0,True,0.0732,0.1,True
+USD_EUR (nivel),-1.5767,0.4953,False,1.3371,0.01,False
+USD_EUR (D1),-6.0465,0.0,True,0.0634,0.1,True
+log_USD_EUR (nivel),-1.6184,0.4735,False,1.3263,0.01,False
+log_USD_EUR (D1),-5.913,0.0,True,0.0613,0.1,True
