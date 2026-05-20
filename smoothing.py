@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from statsmodels.tsa.holtwinters import ExponentialSmoothing, SimpleExpSmoothing
 
-from config import COLORS
+from config import COLORS, DATA_DIR
 from utils import _slug
 
 
@@ -57,5 +57,5 @@ def plot_smoothing_comparison(train: pd.Series, test: pd.Series,
     ax.legend()
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig(f"fig06_smoothing_{_slug(name)}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig06_smoothing_{_slug(name)}.png", bbox_inches="tight")
     plt.show()
