@@ -131,7 +131,7 @@ def univariate_pipeline(df: pd.DataFrame, target: str = "Airline_Fares_CPI",
     ax.legend()
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig(f"fig09b_viitor_{_slug(target)}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig09b_viitor_{_slug(target)}.png", bbox_inches="tight")
     plt.show()
 
     return metrics

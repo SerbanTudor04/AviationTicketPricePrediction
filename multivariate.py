@@ -4,7 +4,7 @@ from statsmodels.tsa.stattools import grangercausalitytests
 from statsmodels.tsa.vector_ar.var_model import VAR
 from statsmodels.tsa.vector_ar.vecm import VECM, coint_johansen
 
-from config import COLORS
+from config import COLORS, DATA_DIR
 from stationarity import test_adf
 from utils import _header, _sub
 
@@ -41,7 +41,7 @@ def granger_causality(df_diff: pd.DataFrame, max_lag: int = 6) -> None:
             except Exception as ex:
                 print(f"  {cause} → {target}: Eroare ({ex})")
 
-    pd.DataFrame(results).to_csv("granger_results.csv", index=False)
+    pd.DataFrame(results).to_csv(f"{DATA_DIR}/granger_results.csv", index=False)
 
 
 def johansen_test(df_mv: pd.DataFrame, det_order: int = 0, k_ar_diff: int = 1) -> int:
