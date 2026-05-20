@@ -5,6 +5,7 @@ from scipy import stats
 from statsmodels.graphics.tsaplots import plot_acf
 from statsmodels.tsa.arima.model import ARIMA
 
+from config import DATA_DIR
 from utils import _slug
 
 
@@ -60,7 +61,7 @@ def plot_sarima_diagnostics(model, name: str) -> None:
     for ax in axes.flat:
         ax.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig(f"fig07_diag_{_slug(name)}.png", bbox_inches="tight")
+    plt.savefig(f"{DATA_DIR}/fig07_diag_{_slug(name)}.png", bbox_inches="tight")
     plt.show()
 
 
